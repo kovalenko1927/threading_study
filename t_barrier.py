@@ -6,11 +6,11 @@ from threading import current_thread, Barrier
 
 def test(barrier):
     slp = random.randint(10,15)
-    print(f"Поток - [{current_thread().name}] запущен в ({time.ctime()})")
+    print(f"[{current_thread().name}] run in ({time.ctime()})")
     time.sleep(slp)
 
     barrier.wait()
-    print(f"Поток - [{current_thread().name}] преодолел барьер в ({time.ctime()})")
+    print(f"[{current_thread().name}] -> ({time.ctime()})")
 
 
 bar = threading.Barrier(5)
